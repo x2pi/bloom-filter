@@ -1,3 +1,15 @@
+(function(root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define('three.CopyShader', ['three'], factory);
+    }
+    else if ('undefined' !== typeof exports && 'undefined' !== typeof module) {
+        module.exports = factory(require('three'));
+    }
+    else {
+        factory(root.THREE);
+    }
+}(this, function(THREE) {
+
 /**
  * @author alteredq / http://alteredqualia.com/
  *
@@ -44,3 +56,4 @@ THREE.CopyShader = {
 	].join( "\n" )
 
 };
+}));
